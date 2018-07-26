@@ -85,14 +85,14 @@ EOF
 fi
 
 # install kotlin
-echo sudo apt-get install snapd snapd-xdg-open
-echo snap install kotlin
+echo RUN sudo apt-get install snapd snapd-xdg-open
+echo RUN snap install kotlin
 
 # install gradle
-wget https://services.gradle.org/distributions/gradle-4.9-bin.zip
-sudo mkdir /opt/gradle
-sudo unzip -d /opt/gradle gradle-4.9-bin.zip
- export PATH=$PATH:/opt/gradle/gradle-4.9/bin
+echo RUN wget https://services.gradle.org/distributions/gradle-4.9-bin.zip
+echo RUN sudo mkdir /opt/gradle
+echo RUN sudo unzip -d /opt/gradle gradle-4.9-bin.zip
+echo "RUN export PATH=$PATH:/opt/gradle/gradle-4.9/bin >> ~/.bashrc"
 
 
 # install bats for testing
