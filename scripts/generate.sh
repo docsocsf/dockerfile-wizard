@@ -84,6 +84,17 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 EOF
 fi
 
+# install kotlin
+echo sudo apt-get install snapd snapd-xdg-open
+echo snap install kotlin
+
+# install gradle
+wget https://services.gradle.org/distributions/gradle-4.9-bin.zip
+sudo mkdir /opt/gradle
+sudo unzip -d /opt/gradle gradle-4.9-bin.zip
+ export PATH=$PATH:/opt/gradle/gradle-4.9/bin
+
+
 # install bats for testing
 echo "RUN git clone https://github.com/sstephenson/bats.git \
   && cd bats \
